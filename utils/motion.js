@@ -46,9 +46,9 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
   },
 });
 
-export const textVariant = (delay) => ({
+export const textVariant = (delay, direction) => ({
   hidden: {
-    y: 50,
+    y: direction === 'toTop' ? 50 : direction === 'toDown' ? -50 : 0,
     opacity: 0,
   },
   show: {
@@ -56,7 +56,7 @@ export const textVariant = (delay) => ({
     opacity: 1,
     transition: {
       type: 'spring',
-      duration: 1.25,
+      duration: 2.25,
       delay,
     },
   },
